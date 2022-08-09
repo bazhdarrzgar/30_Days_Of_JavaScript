@@ -428,6 +428,39 @@ console.log(areaOfCircle1111(10))
 
 
 // console.log("\n")
+// console.log("========================================================================================")
+// console.log("======================== Function with default parameters ========================")
+// console.log("\n")
+
+
+// /*
+
+
+// // syntax
+// // Declaring a function
+// function functionName(param = value) {
+//   //codes
+// }
+
+// // Calling function
+// functionName()
+// functionName(arg)
+
+// */
+
+
+// function greetings(name = 'Peter') {
+//   let message = `${name}, welcome to 30 Days Of JavaScript!`
+//   return message
+// }
+
+// console.log(greetings())
+// console.log(greetings('Asabeneh'))
+// function generateFullName(firstName = 'Asabeneh', lastName = 'Yetayeh') {
+//   let space = ' '
+//   let fullName = firstName + space + lastName
+//   return fullName
+// }
 
 
 
