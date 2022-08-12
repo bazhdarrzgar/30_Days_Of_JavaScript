@@ -1,4 +1,13 @@
 console.log("======================== Higher Order Function ========================")
+
+
+/*
+
+// in this lesson we cover 3 type of function but remember any function you are use that use array or object it can use that function like the (function_object or function_child)
+// function without this can be declared as the (function_object or function_child)
+
+*/
+
 console.log("======================== Callback ========================")
 console.log("\n")
 
@@ -714,6 +723,7 @@ arr.reduce((acc, cur) => {
 const numbers4 = [1, 2, 3, 4, 5]
 
 // how much parameter you have no matter for reduce the value of the array is go to the first array not second or third or ..
+// second and third and ... by default take value (0) 
 
 // the (reduce) method will return the value without (return) keyword
 // (reduce) method will return this value that done by (calculation between this parameter) that we initilized
@@ -753,78 +763,481 @@ console.log(sum2) // 15
 
 
 
-// console.log("\n")
-// console.log("========================================================================================")
-// console.log("======================== Checking properties using hasOwnProperty() ========================")
-// console.log("\n")
 
 
+console.log("\n")
 
-// console.log("\n")
-// console.log("========================================================================================")
-// console.log("======================== Checking properties using hasOwnProperty() ========================")
-// console.log("\n")
+var array = [36, 25, 6, 15];
 
+const sum3 = array.reduce(function(accumulator, currentValue) {
+  // you can use keyword (return) this is optional 
+  return accumulator + currentValue;
 
+  // you can use this style to put another value after the function or you can do that after end bracket ( } ) but remember you should use comma (,) in both of case
+  // return accumulator + currentValue, 0;
+}, 0); 
 
-// console.log("\n")
-// console.log("========================================================================================")
-// console.log("======================== Checking properties using hasOwnProperty() ========================")
-// console.log("\n")
-
-
-
-// console.log("\n")
-// console.log("========================================================================================")
-// console.log("======================== Checking properties using hasOwnProperty() ========================")
-// console.log("\n")
-
-
-
-// console.log("\n")
-// console.log("========================================================================================")
-// console.log("======================== Checking properties using hasOwnProperty() ========================")
-// console.log("\n")
-
-
-
-// console.log("\n")
-// console.log("========================================================================================")
-// console.log("======================== Checking properties using hasOwnProperty() ========================")
-// console.log("\n")
+console.log(sum3)
 
 
 
 
-// console.log("\n")
-// console.log("========================================================================================")
-// console.log("======================== Checking properties using hasOwnProperty() ========================")
-// console.log("\n")
 
 
 
-// console.log("\n")
-// console.log("========================================================================================")
-// console.log("======================== Checking properties using hasOwnProperty() ========================")
-// console.log("\n")
+console.log("\n")
+
+// instaid  of (array name) you can acctually put orginal array in front of this method that use the array
+const sum4 = [1,2,3,4,5].reduce((acc, current) =>
+  acc + current, 0
+)
+
+console.log(sum4)
 
 
 
-// console.log("\n")
-// console.log("========================================================================================")
-// console.log("======================== Checking properties using hasOwnProperty() ========================")
-// console.log("\n")
 
 
 
-// console.log("\n")
-// console.log("========================================================================================")
-// console.log("======================== Checking properties using hasOwnProperty() ========================")
-// console.log("\n")
+console.log("\n")
+console.log("========================================================================================")
+console.log("======================== every ========================")
+console.log("\n")
+
+/*
+
+// every: Check if all the elements are similar in one (aspect). It returns boolean
+// this (aspect) can be customized anyway you want
+// Syntax
+
+every((parameter_name1, parameter_name2, ....) =>
+  typeof parameter_name1 === 'string'
+  typeof parameter_name2 === 'number'
+)
+
+
+*/
+
+
+const names1 = ['Asabeneh', 'Mathias', 'Elias', 'Brook']
+
+// the (every) method loop throw all the element in the (names1) array and (take power of aspectation) for the parameter name 
+const areAllStr = names1.every((name) => 
+  // aspectation for all element of array (names1) if it is string
+  // string should be write in lowercase ('string')
+
+  // make sure you are using (typeof) in front of name to compare if 'string' = 'string'
+  typeof name === 'string' // true
+  // typeof name === 'number' // false
+) // Are all strings?
+
+console.log(areAllStr) // true
 
 
 
-// console.log("\n")
-// console.log("========================================================================================")
-// console.log("======================== Checking properties using hasOwnProperty() ========================")
-// console.log("\n")
+
+
+
+
+
+console.log("\n")
+
+const names2 = [1, 2 , 3, 4]
+
+const areAllStr1 = names2.every((name) => 
+  // typeof name === 'string' // false
+  typeof name === 'number' // true
+) // Are all number ? 
+
+console.log(areAllStr1) // true
+
+
+
+
+
+
+
+console.log("\n")
+
+const bools = [true, true, true, true]
+
+const areAllTrue = bools.every((b) => 
+  // compare if all value of b = true we don't compare the datatype we just compare the value this is why we don't use (typeof) keyword
+  b === true // true
+  // typeof b === true // false
+) // Are all true ? 
+
+console.log(areAllTrue) // true
+
+
+
+
+
+
+console.log("\n")
+console.log("========================================================================================")
+console.log("======================== find ========================")
+console.log("\n")
+
+const ages = [24, 22, 25, 32, 35, 18]
+
+// taking (power of finding) something for (age) parameter
+// (find) method has power to loop throw all this value in the array & finding this value for (age) parameter that this element of age parameter ask for it 
+// this element that age parameter have take by (find) method also (find) method take this element from (ages) array to (age) parameter
+const age = ages.find((age) => 
+  // find this age that less 20 
+  age < 20
+)
+
+console.log(age)
+
+
+
+
+
+
+
+console.log("\n")
+
+const names3 = ['Asabeneh', 'Mathias', 'Elias', 'Brook']
+
+const result = names3.find((name) => 
+  // find this string that number of length is 7
+  name.length > 7
+)
+console.log(result)
+
+
+
+
+
+
+
+
+console.log("\n")
+
+const scores1 = [
+  { name: 'Asabeneh', score: 95 },
+  { name: 'Mathias', score: 80 },
+  { name: 'Elias', score: 50 },
+  { name: 'Martha', score: 85 },
+  { name: 'John', score: 100 },
+]
+
+const score = scores1.find((user) => 
+  // find this value that (  score (value_name)  ) is greater than 80
+  user.score > 80
+)
+
+// the output will be this (      { name: 'Asabeneh', score: 95 }       ) 
+
+// this value that we get is not all the result that we want because we have ( 85, 100 ) 
+// but this value is come after (score: 95) 
+// this is why this function that we have just loop throw one time to the array when it is find take first result 
+// back to the prompt not second and third and ... 
+console.log(score)
+
+
+
+
+
+
+
+
+
+console.log("\n")
+
+const scores2 = [
+  // { name: 'Asabeneh', score: 95 },
+  { name: 'Mathias', score: 80 },
+  { name: 'Elias', score: 50 },
+  { name: 'Martha', score: 85 },
+  { name: 'John', score: 100 },
+]
+
+const score1 = scores2.find((user) => 
+  user.score > 80
+)
+console.log(score1) // { name: 'Martha', score: 85 }
+
+
+
+console.log("\n")
+console.log("========================================================================================")
+console.log("======================== findIndex ========================")
+console.log("\n")
+
+
+const names4 = ['Elias', 'Mathias', 'Brook', 'Asabeneh']
+const ages1 = [24, 22, 25, 32, 35, 18, 12]
+
+// (findIndex) method will find index of this item that you want in the array
+// (findIndex) will put all value in the array to this parameter for the function 
+// (findIndex) take power of finding index to this parameter then we can use this parameter to find any index in the list of this array that we have in hand
+const result1 = names4.findIndex((name) => 
+  // find any value in the list that length is greater than 7  
+  // if compiler not found this index for string by defualt return (-1) this is default value for any (variable and value) if compiler not found (-1 = false)
+
+  // the loop is just do it one time for the list not 2 time or 3 or ..
+  // means if we have more than one value of string is greater than 7 then compiler just look at first solution not other solution when it found it is return it for the target function
+  name.length == 7
+)
+
+console.log(result1) // 1
+
+
+
+
+const age2 = ages1.findIndex((age) => 
+  // find any index position of this value that less than 20
+  // the loop is just do it one time for the list not 2 time or 3 or ..
+  // means if we have more than one value is less 20 then compiler just look at first first solution not other solution when it found it is return it for the target function
+  age < 20
+)
+  
+console.log(age2) // 5
+
+
+
+
+
+
+
+console.log("\n")
+console.log("========================================================================================")
+console.log("======================== some ========================")
+console.log("\n")
+
+/*
+
+some: Check if some of the elements are similar in one aspect. It returns boolean
+
+the some is like (ever) method // every: Check if all the elements are similar in one aspect. It returns boolean
+
+* the different between (ever) method and (some) method
+  
+  * (ever) is check for all the value in the array and check for this aspect that call it by the function
+  * (some) just check for some value in the array if array match just one value or more then the matching is true
+  
+  * ever: ( typeof str = 'string' )if all the value is not string return false
+  * ever: ( typeof num = 'number' )  if all value not number return false
+
+  * some: (typeof str = 'string' ) if just one value is string return true not matter if rest of value is string in the array
+  * some: (typeof num = 'number' ) if just one value is number return true not matter if rest of value is number in the array
+
+*/
+
+const names5 = ['Asabeneh', 'Mathias', 'Elias', 'Brook', 1, 2]
+const bools1 = ['alex', true, true, true, true, 20, 'Bob']
+
+
+const areWeHaveSomeTrue = bools1.some((b) =>  
+  b === true
+) // Are some of value is true ?
+
+console.log(areWeHaveSomeTrue) //true
+
+
+
+
+const areWeHaveSomeStr2 = names5.some((name) => 
+  typeof name === 'number'
+) // Are some of value is strings ?
+
+console.log(areWeHaveSomeStr2) // false
+
+
+
+
+
+
+console.log("\n")
+console.log("========================================================================================")
+console.log("======================== sort & reverse ========================")
+console.log("\n")
+
+
+const products = ['Milk', 'Coffee', 'Sugar', 'Honey', 'Apple', 'Carrot']
+const numbers8 = [8, 2, 10, 30]
+
+console.log("\n")
+
+// using sort method will provide wrong number like this two example below using array above
+console.log("Before sort customization: ", products.sort()) // ['Apple', 'Carrot', 'Coffee', 'Honey', 'Milk', 'Sugar']
+console.log("Before sort customization: ", numbers8.sort()) // [ 10, 2, 30, 8 ]
+
+
+
+
+console.log("\n")
+
+console.log("Before reverse customization: ", products.reverse()) // [ 'Sugar', 'Milk', 'Honey', 'Coffee', 'Carrot', 'Apple' ]
+console.log("Before reverse customization: ", numbers8.reverse()) // [ 8, 30, 2, 10 ]
+
+
+
+
+products.sort(function (a, b) {
+  // using (length) method for for sorting this is means sort using standard length from less length to big length
+  return a.length - b.length
+})
+
+numbers8.sort(function (a, b) {
+  // using just minize inidcation to minimize this number that pointer it is in to that number that is in to the next position
+  // you can use plus sign to do the reverse way
+
+  // this is sort the number from less number to big number
+  return a - b
+})
+
+console.log("\n")
+
+// when we call the array you don't need use (sort) method with the array because we are already change array sorting way using that function with (sort) method with that function
+console.log("After sort customization: ", products) // [ 'Milk', 'Apple', 'Honey', 'Sugar', 'Carrot', 'Coffee' ]
+console.log("After sort customization: ", numbers8) // [ 2, 8, 10, 30 ]
+
+
+
+
+console.log("\n")
+
+// this is sort the number from less number to big number
+
+// because we changed sorting way for the array using (sort) method from (less to big number) 
+// you can also reverse this sorting way without do sperate function for this work just by using (reverse) method with this array when you call the array
+// because the sorting way of array is changed then we can reverse this sorting way just by using (reverse) method
+console.log("After Reverse customization: ", products.reverse()) // [ 'Coffee', 'Carrot', 'Sugar', 'Honey', 'Apple', 'Milk' ]
+console.log("After Reverse customization: ", numbers8.reverse()) // [ 30, 10, 8, 2 ]
+
+
+
+console.log("\n")
+console.log("========================================================================================")
+console.log("======================== Sorting Numeric values ========================")
+console.log("\n")
+
+
+const numbers7 = [9.81, 3.14, 100, 37]
+
+// Using sort method to sort number items provide a wrong result. see below
+console.log("Before sorting customization: ", numbers7.sort()) //[100, 3.14, 37, 9.81]
+
+
+/*
+
+// Syntax
+
+array_variable_name.sort(function (parameter_1, parameter2) {
+  return parameter_1 - parameter_2
+})
+
+console.log(array_variable_name) // [ less number to big number ]
+
+
+
+
+
+
+array_variable_name.sort(function (parameter_1, parameter2) {
+  // reverse position of returning the value
+  return parameter_2 - parameter_1
+})
+
+console.log(array_variable_name) // [ big number to less number ]
+
+*/
+
+
+
+
+console.log("\n")
+
+numbers7.sort(function (a, b) {
+  // this is compare (less number to big number)
+  // (sort) method will sort the value form (less to big) this is done for all element in the array after done of this work they put comparession result in a & b
+  // (a holding first number) and (b second number) the first number will compre to second number (if it is big go to the right hand side if it is less go to the left hand side)
+  // when you return the number is where the magic happen means if you say (return a - b) means return from (less to big) if you say (return b - a) means return from (big to less)
+  // this is happen because compression for (return b - a) will reverse big number compare to less number if true go to left side if not go to the right this is done for all element in the array
+  /*
+ 
+   9.81 > 3.14 | 100 | 37
+   3.14 > 100  | 37  | 9.81
+   3.14 > 100  | 37  | 9.81
+   37   > 9.18 | 3.14| 100
+
+   less ---to--- big
+  */
+  return a - b
+})
+
+console.log("After sorting customization: ", numbers7) // [3.14, 9.81, 37, 100]
+
+
+
+
+
+console.log("\n")
+
+numbers7.sort(function (a, b) {
+  // just by reversing the position of a and b we can change the sorting way
+  // means sort method will sort for both of value from (less to big) way
+  /*
+
+   9.81 > 3.14 | 100 | 37
+   3.14 > 100  | 37  | 9.81
+   3.14 > 100  | 37  | 9.81
+   37   > 9.18 | 3.14| 100
+
+   big ---to--- less
+
+  */
+  return b - a
+})
+
+console.log("After sorting customization: ", numbers7) //[100, 37, 9.81, 3.14]
+
+
+
+
+
+
+
+
+console.log("\n")
+console.log("========================================================================================")
+console.log("======================== Sorting Object Arrays ========================")
+console.log("\n")
+
+
+// objArr.sort(function (a, b) {
+//   if (a.key < b.key) return -1
+//   if (a.key > b.key) return 1
+//   return 0
+// })
+
+
+// console.log(users) // sorted ascending
+
+
+// // or
+
+objArr.sort(function (a, b) {
+  if (a['key'] < b['key']) return -1
+  if (a['key'] > b['key']) return 1
+  return 0
+})
+
+const users = [
+  { name: 'Asabeneh', age: 150 },
+  { name: 'Brook', age: 50 },
+  { name: 'Eyob', age: 100 },
+  { name: 'Elias', age: 22 },
+]
+users.sort((a, b) => {
+  if (a.age < b.age) return -1
+  if (a.age > b.age) return 1
+  return 0
+})
+console.log(users) // sorted ascending
+// [{…}, {…}, {…}, {…}]
+
