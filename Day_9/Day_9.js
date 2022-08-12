@@ -1208,18 +1208,18 @@ console.log("===================================================================
 console.log("======================== Sorting Object Arrays ========================")
 console.log("\n")
 
+/*
 
-// objArr.sort(function (a, b) {
-//   if (a.key < b.key) return -1
-//   if (a.key > b.key) return 1
-//   return 0
-// })
+// Syntax
+
+objArr.sort(function (a, b) {
+  if (a.key < b.key) return -1
+  if (a.key > b.key) return 1
+  return 0
+})
 
 
-// console.log(users) // sorted ascending
-
-
-// // or
+// or
 
 objArr.sort(function (a, b) {
   if (a['key'] < b['key']) return -1
@@ -1227,17 +1227,146 @@ objArr.sort(function (a, b) {
   return 0
 })
 
+*/
+
+/*
+
+// If and if else or else trick
+
+// if you plan just write one line of problem code in if or if else or else condition you use this bracket {} you can not use it
+
+if (condition) ...code problem
+if else (condition) ...code problem
+else ...code problem
+
+// EX.
+
+if (x > y) return 1
+
+*/
+
+
+
+
+function alex(a, b) {
+
+  if (a < b) console.log('no')
+
+  if (a > b) console.log('yes')
+
+  return 0
+
+}
+
+alex(20, 8) // yes
+alex(8, 20) // no
+alex(8, 8) // yes no
+
+
+
+
+
+
+
+console.log("\n")
+
 const users = [
   { name: 'Asabeneh', age: 150 },
   { name: 'Brook', age: 50 },
   { name: 'Eyob', age: 100 },
   { name: 'Elias', age: 22 },
 ]
+
 users.sort((a, b) => {
+  // if age from buttom to up is bigger than next value to up then return -1
+  // if this is true then will (return -1) means the order is from    (   (less number in up) to (bigger number)   )
   if (a.age < b.age) return -1
+  // if age from up to buttom is bigger than next value to down then return 1 
+  // if this is true then will (return 1) means the order is right means it is actually from    (   (less number in up) to (bigger number)   )
   if (a.age > b.age) return 1
+  // in the end it is return this value that is true from on of the condition that is true
+  // ( return 0 ) mostly use in this funtion that have condition inside we don't need specify variable to return the ( return 0 ) will return this value from this condition is true but just (1) value
   return 0
 })
+
 console.log(users) // sorted ascending
-// [{…}, {…}, {…}, {…}]
+
+/*
+
+  if (a.age < b.age) return -1
+
+[
+  { name: 'Elias', age: 22 },
+  { name: 'Brook', age: 50 },
+  { name: 'Eyob', age: 100 },
+  { name: 'Asabeneh', age: 150 }
+]
+
+*/
+
+
+/*
+
+  if (a.age > b.age) return -1
+
+[
+  { name: 'Asabeneh', age: 150 },
+  { name: 'Eyob', age: 100 },
+  { name: 'Brook', age: 50 },
+  { name: 'Elias', age: 22 }
+]
+
+*/
+
+
+
+
+
+
+
+
+
+console.log("\n")
+
+// right order
+const users1 = [
+  { name: 'Asabeneh', age: 22 },
+  { name: 'Brook', age: 50 },
+  { name: 'Eyob', age: 100 },
+  { name: 'Elias', age: 150 },
+]
+
+users1.sort((a, b) => {
+
+  if (a.age < b.age) {
+    console.log('no')
+    return -1
+  }
+  
+  if (a.age > b.age) {
+    console.log('yes')
+    return 1
+  }
+
+  return 0
+
+})
+
+console.log(users1) // sorted ascending
+
+/*
+
+// the (yes) is print 3 time because because ? ( ??? )
+// but anytime how much size array you have then (length - 1) you get the number of output in this case length of array is 4 then ( 4 - 1 ) = 3
+yes
+yes
+yes
+[
+  { name: 'Asabeneh', age: 22 },
+  { name: 'Brook', age: 50 },
+  { name: 'Eyob', age: 100 },
+  { name: 'Elias', age: 150 }
+]
+
+*/
 
