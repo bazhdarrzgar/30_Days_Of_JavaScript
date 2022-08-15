@@ -1,40 +1,20 @@
-<div align="center">
-  <h1> 30 Days Of JavaScript: Classes</h1>
-  <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
-  <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
-  </a>
-  <a class="header-badge" target="_blank" href="https://twitter.com/Asabeneh">
-  <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
-  </a>
-
-<sub>Author:
-<a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-<small> January, 2020</small>
-</sub>
-
-</div>
-
-[<< Day 14](../14_Day_Error_handling/14_day_error_handling.md) | [Day 16>>](../16_Day_JSON/16_day_json.md)
-
-![Thirty Days Of JavaScript](../images/banners/day_1_15.png)
-
 - [Day 15](#day-15)
-	- [Classes](#classes)
-		- [Defining a classes](#defining-a-classes)
-		- [Class Instantiation](#class-instantiation)
-		- [Class Constructor](#class-constructor)
-		- [Default values with constructor](#default-values-with-constructor)
-		- [Class methods](#class-methods)
-		- [Properties with initial value](#properties-with-initial-value)
-		- [getter](#getter)
-		- [setter](#setter)
-		- [Static method](#static-method)
-	- [Inheritance](#inheritance)
-		- [Overriding methods](#overriding-methods)
-	- [Exercises](#exercises)
-		- [Exercises Level 1](#exercises-level-1)
-		- [Exercises Level 2](#exercises-level-2)
-		- [Exercises Level 3](#exercises-level-3)
+  - [Classes](#classes)
+    - [Defining a classes](#defining-a-classes)
+    - [Class Instantiation](#class-instantiation)
+    - [Class Constructor](#class-constructor)
+    - [Default values with constructor](#default-values-with-constructor)
+    - [Class methods](#class-methods)
+    - [Properties with initial value](#properties-with-initial-value)
+    - [getter](#getter)
+    - [setter](#setter)
+    - [Static method](#static-method)
+  - [Inheritance](#inheritance)
+    - [Overriding methods](#overriding-methods)
+  - [Exercises](#exercises)
+    - [Exercises Level 1](#exercises-level-1)
+    - [Exercises Level 2](#exercises-level-2)
+    - [Exercises Level 3](#exercises-level-3)
 
 # Day 15
 
@@ -709,7 +689,3 @@ Frequency Distribution: [(20.0, 26), (16.0, 27), (12.0, 32), (8.0, 37), (8.0, 34
 ```
 
 1. Create a class called PersonAccount. It has firstname, lastname, incomes, expenses properties and it has totalIncome, totalExpense, accountInfo,addIncome, addExpense and accountBalance methods. Incomes is a set of incomes and its description and expenses is also a set of expenses and its description.
-
-🎉 CONGRATULATIONS ! 🎉
-
-[<< Day 14](../14_Day_Error_handling/14_day_error_handling.md) | [Day 16>>](../16_Day_JSON/16_day_json.md)
