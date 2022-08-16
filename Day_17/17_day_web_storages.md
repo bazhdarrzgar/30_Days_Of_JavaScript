@@ -1,40 +1,22 @@
-<div align="center">
-  <h1> 30 Days Of JavaScript: Web Storages</h1>
-  <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
-  <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
-  </a>
-  <a class="header-badge" target="_blank" href="https://twitter.com/Asabeneh">
-  <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
-  </a>
-
-<sub>Author:
-<a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-<small> January, 2020</small>
-</sub>
-
-</div>
-
-[<< Day 16](../16_Day_JSON/16_day_json.md) | [Day 18 >>](../18_Day_Promises/18_day_promises.md)
-
-![Thirty Days Of JavaScript](../images/banners/day_1_17.png)
-
 - [Day 17](#day-17)
-	- [HTML5 Web Storage](#html5-web-storage)
-		- [sessionStorage](#sessionstorage)
-		- [localStorage](#localstorage)
-		- [Use case of Web Storages](#use-case-of-web-storages)
-	- [HTML5 Web Storage Objects](#html5-web-storage-objects)
-		- [Setting item to the localStorage](#setting-item-to-the-localstorage)
-		- [Getting item from localStorage](#getting-item-from-localstorage)
-		- [Clearing the localStorage](#clearing-the-localstorage)
-	- [Exercises](#exercises)
-		- [Exercises: Level 1](#exercises-level-1)
-		- [Exercises: Level 2](#exercises-level-2)
-		- [Exercises: Level 3](#exercises-level-3)
+  - [HTML5 Web Storage](#html5-web-storage)
+    - [sessionStorage](#sessionstorage)
+    - [localStorage](#localstorage)
+    - [Use case of Web Storages](#use-case-of-web-storages)
+  - [HTML5 Web Storage Objects](#html5-web-storage-objects)
+    - [Setting item to the localStorage](#setting-item-to-the-localstorage)
+    - [Getting item from localStorage](#getting-item-from-localstorage)
+    - [Clearing the localStorage](#clearing-the-localstorage)
+  - [Exercises](#exercises)
+    - [Exercises: Level 1](#exercises-level-1)
+    - [Exercises: Level 2](#exercises-level-2)
+    - [Exercises: Level 3](#exercises-level-3)
 
 # Day 17
 
 ## HTML5 Web Storage
+
+<img src="../Day_0/images/1_fKkGXyI5_Dg4dSslgozsoA.png" style="width: 10000px; height: 800px">
 
 Web Storage(sessionStorage and localStorage) is a new HTML5 API offering important benefits over traditional cookies. Before HTML5, application data had to be stored in cookies, included in every server request. Web storage is more secure, and large amounts of data can be stored locally, without affecting website performance. The data storage limit of cookies in many web browsers is about 4 KB per cookie. We Storages can store far larger data (at least 5MB) and never transferred to the server. All sites from the same or one origin can store and access the same data.
 
@@ -49,7 +31,7 @@ It should be noted that data stored in either localStorage or sessionStorage is 
 
 The keys and the values are always strings (note that, as with objects, integer keys will be automatically converted to strings).
 
-![web_storage](../images/web_storage.png)
+![web_storage](../Day_0/images/web_storage.png)
 
 ### sessionStorage
 
@@ -95,7 +77,7 @@ Web Storage objects:
 - _localStorage.removeItem()_ - to remove stored item form a localStorage. It takes key as a parameter.
 - _localStorage.key()_ - to display a data stored in a localStorage. It takes index as a parameter.
 
-![local_storage](../images/local_storage.png)
+![local_storage](../Day_0/images/local_storage.png)
 
 ### Setting item to the localStorage
 
@@ -228,6 +210,3 @@ localStorage.clear()
 
 1. Create an object called personAccount. It has firstname, lastname, incomes, expenses properties and it has totalIncome, totalExpense, accountInfo,addIncome, addExpense and accountBalance methods. Incomes is a set of incomes and its description and expenses is also a set of expenses and its description.
 
-🎉 CONGRATULATIONS ! 🎉
-
-[<< Day 16](../16_Day_JSON/16_day_json.md) | [Day 18 >>](../18_Day_Promises/18_day_promises.md)
