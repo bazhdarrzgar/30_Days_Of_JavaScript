@@ -1,26 +1,22 @@
-- [Day 16](#day-16)
-  - [JSON](#json)
-    - [Converting JSON to JavaScript Object](#converting-json-to-javascript-object)
-      - [JSON.parse()](#jsonparse)
-    - [Using a reviver function with JSON.parse()](#using-a-reviver-function-with-jsonparse)
-    - [Converting Object to JSON](#converting-object-to-json)
-    - [Using a Filter Array with JSON.stringify](#using-a-filter-array-with-jsonstringify)
-  - [Exercises](#exercises)
-    - [Exercises Level 1](#exercises-level-1)
-    - [Exercises Level 2](#exercises-level-2)
-    - [Exercises Level 3](#exercises-level-3)
+console.log("\n")
+console.log("======================== JSON ========================")
+console.log("\n")
 
-# Day 16
+// JSON stands for JavaScript Object Notation. The JSON syntax is derived from JavaScript object notation syntax, 
+// but the JSON format is text or string only. 
+// JSON is a light weight data format for storing and transporting. 
+// JSON is mostly used when data is sent from a server to a client.
 
-## JSON
 
-JSON stands for JavaScript Object Notation. The JSON syntax is derived from JavaScript object notation syntax, but the JSON format is text or string only. JSON is a light weight data format for storing and transporting. JSON is mostly used when data is sent from a server to a client. JSON is an easier-to-use alternative to XML.
+/*
 
-**Example:**
+// Example:
 
-```js
+// object array ( object containing array)
 {
+// array object (array containing object)
 "users":[
+  // object
   {
     "firstName":"Asabeneh",
     "lastName":"Yetayeh",
@@ -41,18 +37,20 @@ JSON stands for JavaScript Object Notation. The JSON syntax is derived from Java
   }
 ]
 }
-```
 
-The above JSON example is not much different from a normal object. Then, what is the difference ? The difference is the key of a JSON object should be with double quotes or it should be a string. JavaScript Object and JSON are very similar that we can change JSON to Object and Object to JSON.
 
-Let us see the above example in more detail, it starts with a curly bracket. Inside the curly bracket, there is "users" key which has a value array. Inside the array we have different objects and each objects has keys, each keys has to have double quotes. For instance, we use "firstNaMe" instead of just firstName, however in object we use keys without double quotes. This is the major difference between an object and a JSON. Let's see more examples about JSON.
 
-**Example:**
 
-```js
+
+// Example:
+
+
+// object
 {
+    // object array (object that containing array)
     "Alex": {
         "email": "alex@alex.com",
+        // array
         "skills": [
             "HTML",
             "CSS",
@@ -145,25 +143,34 @@ Let us see the above example in more detail, it starts with a curly bracket. Ins
         "points": 40
     }
 }
-```
 
-### Converting JSON to JavaScript Object
+*/
 
-Mostly we fetch JSON data from HTTP response or from a file, but we can store the JSON as a string and we can change to Object for sake of demonstration. In JavaScript the keyword _JSON_ has _parse()_ and _stringify()_ methods. When we want to change the JSON to an object we parse the JSON using _JSON.parse()_. When we want to change the object to JSON we use _JSON.stringify()_.
 
-#### JSON.parse()
 
-```js
+console.log("\n")
+console.log("======================== Converting JSON to JavaScript Object ========================")
+console.log("\n")
+
+/* 
+
 JSON.parse(json[, reviver])
 // json or text , the data
 // reviver is an optional callback function
-/* JSON.parse(json, (key, value) => {
 
-})
+// JSON.parse(json, (key, value) => {
+
+// })
+
 */
-```
 
-```js
+
+
+
+// When we want to change the JSON to an object we parse the JSON using JSON.parse(). 
+// When we want to change the object to JSON we use JSON.stringify().
+
+// string
 const usersText = `{
 "users":[
   {
@@ -187,16 +194,55 @@ const usersText = `{
 ]
 }`
 
-const usersObj = JSON.parse(usersText, undefined, 4)
+// convert (string to json format) using (JSON.parse(string, value)) or just (JSON.parse(string))
+// the value in this case is nothing and do any action
+// const usersObj = JSON.parse(usersText, lastalex = 'me', 4)
+// const usersObj = JSON.parse(usersText, undefined, undefined, undefined)
+
+// remember this variable should be unique that you are used to convert json to string
+const usersObj = JSON.parse(usersText)
 console.log(usersObj)
-```
 
-### Using a reviver function with JSON.parse()
+/*
 
-To use the reviver function as a formatter, we put the keys we want to format first name and last name value. Let us say, we are interested to format the firstName and lastName of the JSON data .
+{
+  users: [
+    {
+      firstName: 'Asabeneh',
+      lastName: 'Yetayeh',
+      age: 250,
+      email: 'asab@asb.com'
+    },
+    {
+      firstName: 'Alex',
+      lastName: 'James',
+      age: 25,
+      email: 'alex@alex.com'
+    },
+    {
+      firstName: 'Lidiya',
+      lastName: 'Tekle',
+      age: 28,
+      email: 'lidiya@lidiya.com'
+    }
+  ]
+}
 
-```js
-const usersText = `{
+*/
+
+
+
+
+
+
+
+
+console.log("\n")
+console.log("======================== Using a reviver function with JSON.parse() ========================")
+console.log("\n")
+
+
+const usersText1 = `{
 "users":[
   {
     "firstName":"Asabeneh",
@@ -219,29 +265,69 @@ const usersText = `{
 ]
 }`
 
-const usersObj = JSON.parse(usersText, (key, value) => {
+// in this example we do change on (key and value) this is why i take this name as the parameter
+const usersObj1 = JSON.parse(usersText1, (key, value) => {
   let newValue =
+    // if my typeof my value is string and my key isnot email then,
+    // done this change to other (key and value),
+    // first change other value to Upper Case and return it, if not then return the value it self
+    
+    // this code is just change value to Upper Case except this key that is (email) and value of that (email) key is (string)
     typeof value == 'string' && key != 'email' ? value.toUpperCase() : value
+  // in the end i return the variable (newValue)
   return newValue
 })
-console.log(usersObj)
-```
+// print the change from the variable (usersObj1)
+console.log(usersObj1)
 
-The _JSON.parse()_ is very handy to use. You do not have to pass optional parameter, you can just use it with the required parameter and you will achieve quite a lot.
+/*
 
-### Converting Object to JSON
+{
+  users: [
+    {
+      firstName: 'ASABENEH',
+      lastName: 'YETAYEH',
+      age: 250,
+      email: 'asab@asb.com'
+    },
+    {
+      firstName: 'ALEX',
+      lastName: 'JAMES',
+      age: 25,
+      email: 'alex@alex.com'
+    },
+    {
+      firstName: 'LIDIYA',
+      lastName: 'TEKLE',
+      age: 28,
+      email: 'lidiya@lidiya.com'
+    }
+  ]
+}
 
-When we want to change the object to JSON we use _JSON.stringify()_. The stringify method takes one required parameter and two optional parameters. The replacer is used as filter and the space is an indentations. If we do not want to filter out any of the keys from the object we can just pass undefined.
+*/
 
-```js
+
+
+
+
+
+
+console.log("\n")
+console.log("======================== Converting Object to JSON ========================")
+console.log("\n")
+
+/*
+
+// convert (json or object) to txt using ( JSON.stringify(json, replace, space) ) or just ( JSON.stringify(json) )
+
 JSON.stringify(obj, replacer, space)
 // json or text , the data
 // reviver is an optional callback function
-```
 
-Let us convert the following object to a string. First let use keep all the keys and also let us have 4 space indentation.
+*/
 
-```js
+// this is object format
 const users = {
   Alex: {
     email: 'alex@alex.com',
@@ -311,11 +397,15 @@ const users = {
   }
 }
 
+// to change json to string we use ( JSON.stringify(json, replace, space) ) or just ( JSON.stringify(json) )
+// we are using (replace) to replace something but in this case we don't replace anything this is why i used (undefined) value
+// we use (space) to define the number of space that we want take to the line
+// const txt = JSON.stringify(users, undefined, 4)
 const txt = JSON.stringify(users, undefined, 4)
 console.log(txt) // text means JSON- because json is a string form of an object.
-```
 
-```sh
+/*
+
 {
     "Alex": {
         "email": "alex@alex.com",
@@ -411,14 +501,27 @@ console.log(txt) // text means JSON- because json is a string form of an object.
         "points": 40
     }
 }
-```
 
-### Using a Filter Array with JSON.stringify
+*/
 
-Now, lets use the replacer as a filter. The user object has long list of keys but we are interested only in few of them. We put the keys we want to keep in array as show in the example and use it the place of the replacer.
 
-```js
-const user = {
+
+
+
+console.log("\n")
+console.log("======================== Using a Filter Array with JSON.stringify ========================")
+console.log("\n")
+
+/*
+
+// Syntax
+
+const variable_name = JSON.stringify(json, [key, key, ...], space)
+console.log(variable_name)
+
+*/
+
+const user1 = {
   firstName: 'Asabeneh',
   lastName: 'Yetayeh',
   country: 'Finland',
@@ -430,28 +533,47 @@ const user = {
   points: 30
 }
 
-const txt = JSON.stringify(user,['firstName', 'lastName', 'country', 'city', 'age'],4)
-console.log(txt)
-```
+// using (filter array) in place of (replace) this will just call this value that we want but remember that (key value) that you want it should be inside squar bracket []
+const txt1 = JSON.stringify(user1, ['firstName', 'lastName', 'country', 'city', 'age', 'skills'], 4)
+console.log(txt1)
 
-```sh
+/*
+
 {
     "firstName": "Asabeneh",
     "lastName": "Yetayeh",
     "country": "Finland",
     "city": "Helsinki",
-    "age": 250
+    "age": 250,
+    "skills": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "React",
+        "Python"
+    ]
 }
-```
 
-🌕 You are extraordinary.  Now, you knew a light-weight data format which you may use to store data or to send it an HTTP server. You are 16 steps a head to your way to greatness. Now do some exercises for your brain and for your muscle.
+*/
 
-## Exercises
 
-```js
+
+
+
+
+
+
+
+
+console.log("\n")
+console.log("======================== Exercises ========================")
+console.log("\n")
+
+
 const skills = ['HTML', 'CSS', 'JS', 'React','Node', 'Python']
 let age = 250;
 let isMarried = true
+
 const student = {
   firstName:'Asabeneh',
   lastName:'Yetayehe',
@@ -459,7 +581,29 @@ const student = {
   isMarried:true,
   skills:['HTML', 'CSS', 'JS', 'React','Node', 'Python', ]
 }
-const txt = `{
+
+const obj_to_str = JSON.stringify(student, ['age', 'isMarried', 'skills'], 2)
+console.log(obj_to_str)
+
+/*
+
+{
+  "age": 250,
+  "isMarried": true,
+  "skills": [
+    "HTML",
+    "CSS",
+    "JS",
+    "React",
+    "Node",
+    "Python"
+  ]
+}
+
+*/
+
+
+const txt2 = `{
     "Alex": {
         "email": "alex@alex.com",
         "skills": [
@@ -555,20 +699,82 @@ const txt = `{
     }
 }
 `
-```
 
-### Exercises Level 1
+// if you try filtering you don't success with parse also for space
+// const str_to_json = JSON.parse(txt2, ['age'], 10)
+const str_to_json = JSON.parse(txt2)
+console.log(str_to_json)
 
-1. Change skills array to JSON using JSON.stringify()
-1. Stringify the age variable
-1. Stringify the isMarried variable
-1. Stringify the student object
+/*
 
-### Exercises Level 2
 
-1. Stringify the students object with only firstName, lastName and skills properties
+{
+  Alex: {
+    email: 'alex@alex.com',
+    skills: [ 'HTML', 'CSS', 'JavaScript' ],
+    age: 20,
+    isLoggedIn: false,
+    points: 30
+  },
+  Asab: {
+    email: 'asab@asab.com',
+    skills: [
+      'HTML',
+      'CSS',
+      'JavaScript',
+      'Redux',
+      'MongoDB',
+      'Express',
+      'React',
+      'Node'
+    ],
+    age: 25,
+    isLoggedIn: false,
+    points: 50
+  },
+  Brook: {
+    email: 'daniel@daniel.com',
+    skills: [ 'HTML', 'CSS', 'JavaScript', 'React', 'Redux' ],
+    age: 30,
+    isLoggedIn: true,
+    points: 50
+  },
+  Daniel: {
+    email: 'daniel@alex.com',
+    skills: [ 'HTML', 'CSS', 'JavaScript', 'Python' ],
+    age: 20,
+    isLoggedIn: false,
+    points: 40
+  },
+  John: {
+    email: 'john@john.com',
+    skills: [ 'HTML', 'CSS', 'JavaScript', 'React', 'Redux', 'Node.js' ],
+    age: 20,
+    isLoggedIn: true,
+    points: 50
+  },
+  Thomas: {
+    email: 'thomas@thomas.com',
+    skills: [ 'HTML', 'CSS', 'JavaScript', 'React' ],
+    age: 20,
+    isLoggedIn: false,
+    points: 40
+  },
+  Paul: {
+    email: 'paul@paul.com',
+    skills: [
+      'HTML',
+      'CSS',
+      'JavaScript',
+      'MongoDB',
+      'Express',
+      'React',
+      'Node'
+    ],
+    age: 20,
+    isLoggedIn: false,
+    points: 40
+  }
+}
 
-### Exercises Level 3
-
-1. Parse the *txt* JSON to object.
-2. Find the user who has many skills from the variable stored in *txt*.
+*/
