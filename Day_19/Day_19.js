@@ -146,7 +146,7 @@ function outerFunction2() {
 
 const variable_name = function_name()
 
-variable_name.return_InnerFunction_name
+variable_name.return_key_name_for_the_function
 
 
 
@@ -155,7 +155,7 @@ variable_name.return_InnerFunction_name
 // if you are use there function it self then use this rule for calling the function
 // Syntax
 
-function_name().return_InnerFunction_name
+function_name().return_key_name_for_the_function
 
 */
 
