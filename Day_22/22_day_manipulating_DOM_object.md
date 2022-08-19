@@ -1,22 +1,3 @@
-<div align="center">
-  <h1> 30 Days Of JavaScript: Manipulating DOM Object</h1>
-  <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
-  <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
-  </a>
-  <a class="header-badge" target="_blank" href="https://twitter.com/Asabeneh">
-  <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
-  </a>
-
-<sub>Author:
-<a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-<small> January, 2020</small>
-</sub>
-
-</div>
-
-[<< Day 21](../21_Day_DOM/21_day_dom.md) | [Day 23 >>](../23_Day_Event_listeners/23_day_event_listeners.md)
-
-![Thirty Days Of JavaScript](../images/banners/day_1_22.png)
 - [Day 22](#day-22)
   - [DOM(Document Object Model)-Day 2](#domdocument-object-model-day-2)
     - [Creating an Element](#creating-an-element)
@@ -210,22 +191,18 @@ The above snippet of code cleared all the child elements.
    - Odd numbers background is yellow
    - Prime numbers background is red
 
-![Number Generator](./../images/projects/dom_min_project_day_number_generators_2.1.png)
+![Number Generator](./../Day_0/images/projects/dom_min_project_day_number_generators_2.1.png)
 
 ### Exercises: Level 2
 
 1. Use the countries array to display all the countries.See the design
 
-![World Countries List](./../images/projects/dom_min_project_countries_aray_day_2.2.png)
+![World Countries List](./../Day_0/images/projects/dom_min_project_countries_aray_day_2.2.png)
 
 ### Exercises: Level 3
 
 Check the requirement of this project from both images(jpg and gif). All the data and CSS has been implemented using JavaScript only. The data is found on starter folder project_3. The drop down button has been created using [*details*](https://www.w3schools.com/tags/tag_details.asp) HTML element.
 
-![Challenge Information](./../images/projects/dom_mini_project_challenge_info_day_2.3.gif)
+![Challenge Information](./../Day_0/images/projects/dom_mini_project_challenge_info_day_2.3.gif)
 
-![Challenge Information](./../images/projects/dom_mini_project_challenge_info_day_2.3.png)
-
-🎉 CONGRATULATIONS ! 🎉
-
-[<< Day 21](../21_Day_DOM/21_day_dom.md) | [Day 23 >>](../23_Day_Event_listeners/23_day_event_listeners.md)
+![Challenge Information](./../Day_0/images/projects/dom_mini_project_challenge_info_day_2.3.png)

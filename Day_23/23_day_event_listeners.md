@@ -1,36 +1,16 @@
-<div align="center">
-  <h1> 30 Days Of JavaScript: Event Listeners</h1>
-  <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
-  <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
-  </a>
-  <a class="header-badge" target="_blank" href="https://twitter.com/Asabeneh">
-  <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
-  </a>
-
-<sub>Author:
-<a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-<small> January, 2020</small>
-</sub>
-
-</div>
-
-[<< Day 22](../22_Day_Manipulating_DOM_object/22_day_manipulating_DOM_object.md) | [Day 24 >>](../24_Day_Project_solar_system/24_day_project_solar_system.md)
-
-![Thirty Days Of JavaScript](../images/banners/day_1_23.png)
-
 - [Day 22](#day-22)
-	- [DOM(Document Object Model)-Day 3](#domdocument-object-model-day-3)
-		- [Event Listeners](#event-listeners)
-			- [Click](#click)
-			- [Double Click](#double-click)
-			- [Mouse enter](#mouse-enter)
-		- [Getting value from an input element](#getting-value-from-an-input-element)
-		- [input value](#input-value)
-			- [input event and change](#input-event-and-change)
-			- [blur event](#blur-event)
-			- [keypress, keydow and keyup](#keypress-keydow-and-keyup)
-	- [Exercises](#exercises)
-		- [Exercise: Level 1](#exercise-level-1)
+  - [DOM(Document Object Model)-Day 3](#domdocument-object-model-day-3)
+    - [Event Listeners](#event-listeners)
+      - [Click](#click)
+      - [Double Click](#double-click)
+      - [Mouse enter](#mouse-enter)
+    - [Getting value from an input element](#getting-value-from-an-input-element)
+    - [input value](#input-value)
+      - [input event and change](#input-event-and-change)
+      - [blur event](#blur-event)
+      - [keypress, keydow and keyup](#keypress-keydow-and-keyup)
+  - [Exercises](#exercises)
+    - [Exercise: Level 1](#exercise-level-1)
 
 # Day 22
 
@@ -321,12 +301,8 @@ We can access all the key numbers of the keyboard using different event listener
 
 1. Generating numbers and marking evens, odds and prime numbers with three different colors. See the image below.
 
-![Number Generator](./../images/projects/dom_min_project_number_generator_day_3.1.gif)
+![Number Generator](./../Day_0/images/projects/dom_min_project_number_generator_day_3.1.gif)
 
 1. Generating the keyboard code code using even listener. The image below.
 
-![Keyboard key](./../images/projects/dom_min_project_keycode_day_3.2.gif)
-
-🎉 CONGRATULATIONS ! 🎉
-
-[<< Day 22](../22_Day_Manipulating_DOM_object/22_day_manipulating_DOM_object.md) | [Day 24 >>](../24_Day_Project_solar_system/24_day_project_solar_system.md)
+![Keyboard key](./../Day_0/images/projects/dom_min_project_keycode_day_3.2.gif)
