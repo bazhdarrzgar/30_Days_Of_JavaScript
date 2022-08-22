@@ -1,7 +1,239 @@
+/*
+
+// sudo code
+
+1. 
+
+    * containerFirst = featching first element class container_first
+    // (wordCountries) is variable that we declared in   cuontry_list.js   file
+    * countriesList = Calling all data of variable worldCountries
+
+
+2. 
+
+    function generateDivs {
+        * containerFirst.innerHTML = ''
+
+        for (loop throw all the value of worldCountries) {
+            * create element ('div')
+            * create element ('p')
+            * put text to element ('p') that containe this value that for loop cicle throw on variable worldCountries data
+            * taking class to div and the class name is (container_first_item)
+            * taking id to div and the class name is (container_first_item)
+            * p tag is child of div tag
+            * div tag is child of container_first class
+        }
+    }
+
+    calling function (generateDivs)
+
+
+3. 
+    * counlent = featching first element class counlent
+    * put this text to variable counlent to put it to class counlent = `total number of countries ${worldCountries.length}`
+    taking font size style to counlent class 
+
+
+4. 
+    function startWithLetter {
+        * containerFirst.innerHTML = ''
+
+        * letters = featching first element of class input_field but just value
+        * filteredCountry = change each data that we have in variable worldCountries and also this letter that user is type and compare with each other 
+        * calling function generateDivs(filterdCountry) 
+         
+        * firstLietter = featching first element of class firstLetter
+        * length = featching first element of class length
+        * start = featching first element of class start
+        
+        * taking color style for the font for class firstLetter
+        * taking font weight style for class firstLetter
+        * taking font size style for class firstLetter
+        
+        * taking color style for the font for class length
+        * taking font weight style for class length
+        * taking font size style for class length
+        
+        * taking this content for class start = 'Countries Starting with'
+
+        * taking this content for class firstLetter = `${letters}
+        `
+        * taking this content for class length = `${filteredCountry.length}`
+
+        * return filterdCountry
+    }
+
+    * startWithLetter()
+
+
+5. 
+    function callToStart() {
+        * startnwith = featching first element of class btn_btn--startwith
+        * startnwith.addEventListener('click', function) {
+            * flag = 1
+
+            * m = featching first element of class input_field but just the value of this class
+            * char = /^[a-zA-Z]+$/;
+
+            * if (String(m).search(char)) {
+                * containerFirst.textContent = 'Please Enter a valid Input'
+                * return true
+            } 
+            
+            * else {
+                false
+                // return false
+            }
+            * calling function  startWithLetter(m)
+        })
+    }
+
+callToStart()
+
+
+6. 
+    function countriesInclude() {
+        * countainerFirst.innerHTML = ''
+        * letters = featching first element class input_field but just value of this element
+        
+        * filteredCountry = change each data that we have in variable worldCountries and also this letter that user is type and compare with each other, this letter that user is type in the input_field it should be more that 1 or more than index -1 means unless 1 letter
+        * calling function generateDivs(filterdCountry) 
+         
+        * firstLietter = featching first element of class firstLetter
+        * length = featching first element of class length
+        * include = featching first element of id include
+        
+        * taking color style for the font for class firstLetter
+        * taking font weight style for class firstLetter
+        * taking font size style for class firstLetter
+        
+        * taking color style for the font for class length
+        * taking font weight style for class length
+        * taking font size style for class length
+        
+        * taking this content for class firstLetter = `${letters}
+        
+        * taking this content for id include = 'Countries Starting with'
+        `
+        * taking this content for class length = `${filteredCountry.length}`
+
+        * return filterdCountry
+    }
+
+countriesInclude()
+
+
+7.
+    function callToInclude() {
+        * includeAny = fatching first element class btn_btn--include
+        * add event lestener for this button includeAny ('click', function() {
+            * flag = 2
+            * m = featching first element class input_field but just value
+            * char = /^[a-zA-Z]+$/;
+            * if (String(m).search(char)) {
+                * put this content to class containerFirst = 'Please Enter a valid input'
+                * return true 
+            }
+            // we don't need this else if just for fun 😊😊😊
+            * else if(isNaN(m)) {
+                put this text to class containerFirst = 'Enter number greater than 5!'
+            }
+            * else {
+                false
+                // retrun false
+            }
+
+            countriesInclude(m)
+        })
+    }
+
+callToInclude()
+
+
+8.
+    * sort = fatching first element class btn_btn--sort
+    * add event listener to button sort variable('click', function() {
+        // reverse order of this variable
+        * worldCountries.reverse()
+        
+        * if (flag === 1) {
+            // reverse order of this function
+            startWithletter().reverse()
+        }  
+        else {
+            // reverse order of this function
+            countriesInclude().reverse()
+        }
+    })
+
+
+9. 
+    * input = fatching first element class input_field
+    * add event listener for for button input('keyup', function() {
+        * startWithLetter()
+        * countriesInclude()
+    });
+
+    // putting any key that user press on to the event parameter using onkeydown keyword
+    * fatching first element class input_field.onkeydown = function(event) {
+        if(event.keyCode == 13) {
+            document.querySelector('.btn_btn--startwith').click()
+            document.querySelector('.btn_btn--include').click()
+        }
+    };
+
+
+10. 
+    let descending = 'a'
+    function toggleSort() {
+        * image = featching first element of class button_img--size
+        * if (descending == 'a') {
+            image.src = './image/za.png'
+            descending = 'z'
+        }
+        * else {
+            image.src = './image/az.png'
+            descending = 'a'
+        }
+    }
+
+    toggleSort()
+
+11. 
+    * btndown = featching first element of class btn_btn--sort
+    * add event listener for button btndown('click', toggleSort)
+
+12.
+    function focusFunction(trans) {
+        * taking transition style for trans parameter
+    }
+
+
+13.
+    * btnContainer = featching first element of class button
+    * btns = featching first element of id btn
+
+    * for (loop throw all this id of btns) {
+        * add event listener for all this id of btns('click', function(){
+            * current = featching all element of class active 
+            * if (current.lengt > 0) {
+                current[0]..className = current[0].className.replace(' active', '');
+            }
+            
+            * this.className += ' active';
+        });
+    }
+
+
+*/
+
+
+
 // featching first result of this element that class name is   (container_first)
 const containerFirst = document.querySelector('.container_first')
 
 // featching all this value that we put to the variable   (wordCountries)
+// (wordCountries) is variable that we declared in   cuontry_list.js   file
 const countriesList = [...worldCountries]
 
 // ======== Generating default divs ========
@@ -31,7 +263,6 @@ function generateDivs(worldCountries) {
 }
 // calling functionn   (generateDivs)   and the value is send by variable (worldCountries)
 generateDivs(worldCountries)
-
 
 // ================ Printing the Number of countries ================
 // featching first result of this element that class name is   (counlent)
@@ -226,6 +457,7 @@ function callToInclude() {
             containerFirst.textContent = 'Please Enter a valid input';
             return true;
         } 
+        // we don't need this else if 😊😊😊
         // The isNaN() function determines whether a value is number or not.
         else if (isNaN(m)) {
             // put this message to class   (container_first)
@@ -290,7 +522,8 @@ input.addEventListener("keyup", function() {
 
 // featching first result of this element that have class   (input_field)
 // also when they click the keyword in first click this function will happen 
-/// this function will return both of matching result of both of this button
+// this function will return both of matching result of both of this button
+// putting any key that user press on to the event parameter using onkeydown keyword
 document.querySelector('.input_field').onkeydown = function(event) {
     // when we click to the enter
     if (event.keyCode == 13) {
@@ -332,6 +565,10 @@ function toggleSort() {
 
 // calling function   (toggleSort)
 toggleSort()
+
+
+
+
 
 // featching first element of class   (btn_btn--sort)
 let btndown = document.querySelector('.btn_btn--sort')
