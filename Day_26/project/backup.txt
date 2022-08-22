@@ -1,0 +1,92 @@
+//========= search with any letter ===============
+
+// function that we are  use for search bar for searching and design the search bar
+const countriesInclude = () => {
+    // put empty message to the class   (container_first)
+    containerFirst.innerHTML = ''
+    // featching first element result that containe class    (input_field)   but just the value of this element
+    letters = document.querySelector('.input_field').valuet
+    // also filtering of this letter that user put on the search bar by changing all the data that we have from file   country_list.js   to lower case and change this letter that user put on the search bar to lower case, but index of this letter that user type on this search bar it should be greater than -1 means unless it should type one character
+    const filteredCountry = worldCountries.filter(countries => countries.toLowerCase().indexOf(letters.toLowerCase()) > -1)
+    // calling function   (generateDivs) 
+    generateDivs(filteredCountry) 
+
+    // ============= printing the length of the countries =============
+
+    // featching first result of the element that have class   (firstLetter)
+    const firstLetter = document.querySelector('.firstLetter')
+    // featching first result of the element that have class   (length)
+    const length = document.querySelector('.length')
+    // featching first result of the element that have id   (include)
+    const include = document.querySelector('#include')
+    // taking color for the font using style for the class   (firstLetter)
+    firstLetter.style.color = 'red'
+    // taking weight for the font using style for the class   (firstLetter)
+    firstLetter.style.fontWeight = 'bold'
+    // taking size for the font using style for the class   (firstLetter)
+    firstLetter.style.fontSize = '30px'
+    // taking color for the font using style for the class   (length)
+    length.style.color = 'blue'
+    // taking weight for the font using style for the class   (length)
+    length.style.fontWeight = 'bold'
+    // taking size for the font using style for the class   (length)
+    length.style.fontSize = '30px'
+    // taking this message to the class   (firstLetter)  the message containe this letter that they type on the search bar
+    firstLetter.textContent = `${letters}`
+    // taking this message to the id   (include)   
+    include.textContent = 'Countries That Include'
+    // taking this message to the class   (length)   the message containe the number of this result that user want from there input 
+    length.textContent = `${filteredCountry.length}`
+
+    // return value of   (filteredCountry)
+    return filteredCountry
+}
+// call the function   (countriesInclude)
+countriesInclude()
+
+
+
+
+
+// ========= Listener for include ===============
+// 
+function callToInclude() {
+    let includeAny = document.querySelector('.btn_btn--include')
+    includeAny.addEventListener('click', function() {
+
+        flag = 2
+        let m = document.querySelector('.input_field').value
+        let char = /^[a-zA-Z]+$/;
+        //===========================================================================
+        if (String(m).search(char)) {
+            containerFirst.textContent = 'Please Enter a valid input';
+            return true;
+        } else if (isNaN(m)) {
+            containerFirst.textContent = 'Enter number greater than 5!';
+        } else {
+            false
+        }
+        countriesInclude(m)
+    })
+}
+callToInclude()
+
+
+// =========== sorting the function in reverse =====================
+const sort = document.querySelector('.btn_btn--sort')
+sort.addEventListener('click', function() {
+    worldCountries.reverse()
+    if (flag === 1) {
+        startWithletter().reverse()
+    } else {
+        countriesInclude().reverse()
+    }
+})
+
+
+// =========== Listener for keydown ===============================
+let input = document.querySelector('.input_field')
+input.addEventListener("keyup", function() {
+    startWithletter()
+    countriesInclude()
+});
